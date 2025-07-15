@@ -1,24 +1,35 @@
-# Naive Bayes Classifier for Iris Dataset
+# Naive Bayes Classifier (NBC) in Python
 
-This repository contains a Python implementation of a Naive Bayes Classifier (NBC) designed to classify the Iris dataset. The classifier handles both continuous (Gaussian-distributed) and discrete attributes, incorporates Laplace smoothing to address zero-frequency problems, and provides probabilistic predictions for user queries.
+This repository contains a custom implementation of a **Naive Bayes Classifier (NBC)** from scratch in Python, designed to support **both discrete (D)** and **continuous (C)** attributes using the **Gaussian distribution** for the latter.
 
-## Features
+---
 
-- **Data Handling**: Loads CSV files with mixed attribute types (continuous/discrete) and automatically detects their distributions.
-- **Training**: Computes class probabilities (priors) and likelihoods for Gaussian and discrete attributes.
-- **Prediction**: Calculates posterior probabilities for user-provided queries.
-- **Evaluation**: Includes a test set accuracy metric to validate performance.
-- **User Interaction**: Allows interactive input for custom queries.
+## 📁 Files
 
-## Requirements
+- `NBC.py`: The main Python script containing the Naive Bayes Classifier.
+- `IRIS.csv`: Example dataset (assumed) formatted with a header specifying the attribute types.
 
-- Python 3.x
-- pandas
-- scikit-learn (for data splitting)
+---
 
-## Usage
+## ✅ Features
 
-1. **Training the Model**:  
-   Run the script to train the model on the included `IRIS.csv` dataset:
-   ```bash
-   python NBC.py
+- Handles both discrete and continuous attributes.
+- Automatically computes:
+  - Prior probabilities for each class.
+  - Conditional probabilities with **Laplace smoothing**.
+  - Mean and standard deviation for Gaussian-distributed features.
+- Accepts user queries for prediction.
+- Displays posterior probabilities.
+- Splits dataset into training (70%) and testing (30%) using stratified sampling.
+- Calculates and displays model accuracy on test data.
+
+---
+
+## 📥 Input Format
+
+CSV file must follow the below format:
+
+```csv
+"feature1",C,"feature2",D,...,"class"
+value1,value2,...,"ClassLabel"
+...
